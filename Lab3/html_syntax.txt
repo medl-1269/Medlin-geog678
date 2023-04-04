@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<link href="layout.css" rel="stylesheet" type="text/css"/>
+
+<div id="header"></div>
+<div class="left"></div>
+<div class="stuff">
+  <br><br>
+  <h1>Resume</h1>
+  <h2>Lauren Medlin</h2>
+  <hr />
+  <br>
+  <h3>Summary</h3>
+  <p id="summary">Qualified Natural Resource Specialist with a BA in Environmental Studies from Baylor University. 
+Experience with government agency regulations and requirements related to the Lead and Copper program 
+and Wastewater and MS4 applications. Currently obtaining a master’s degree in Marine Resource 
+    Management at Texas A&M University at Galveston.</p>
+  <br>
+  <h4>Education</h4>
+  <ul>
+    <a href="https://environmentalscience.artsandsciences.baylor.edu/
+    </a>
+    <!--Link-->
+    <a href="https://environmentalscience.artsandsciences.baylor.edu/">
+      <li>B.A. Environmental Studies Degree at Baylor University</li>
+    </a>
+    <a href="https://www.tamug.edu/mars/degrees/Marine_Resources_Management.html"</a>
+                                                                  <li>Master's of Marine Resource Management at Texas A&M University at Galveston</li>
+  </ul>
+  <h5>Work Experience</h5>
+  <ul>
+    <li>Texas Park and Wildlife Department (TPWD), Dickinson Marine Lab</li>
+      <ul>
+         <li>Shadowed TPWD employees from multiple departments while performing agency related duties.</li>
+         <li>Assisted with outreach events at local libraries and other community centers for the 
+public.</li>
+         <li>Practiced hitching trailers, unloading/loading boats, driving boats through Texas waterways, and 
+boat maintenance.</li>
+      </ul>
+    <li>Texas Commission on Environmental Quality (TCEQ)</li>
+      <ul>
+      <li>Evaluated program needs related to the requirements of the Lead and Copper Rule (LCR) 
+compliance program.</li>
+      <li>Maintained and developed data related to drinking water quality and public water system 
+inventory and sampling schedule changes based on data submitted by the public water system</li>
+      <li>Provided technical and compliance assistance related to the TCEQ rules, regulations and standards 
+for drinking water quality to other agency staff, governmental entities, industry and the general 
+public.</li>
+      </ul>
+ <li>University of Texas at Arlington (UTA)</li>
+     <ul>
+       <li>Reviewed and completed administrative review for applications and documents associated with 
+wastewater treatment and MS4 applications.</li>
+       <li>Reviewed technical documents, maps, and other forms for wastewater treatment and MS4 
+facilities.</li>
+       <li>Assisted with resolving customer inquiries and providing support to other areas as needed.</li>
+     </ul>
+  </ul>
+  <h6>Skills</h6>
+  <ul>
+    <li>Microsoft Word, Excel, Access, and PowerPoint</li>
+    <li>ArcGIS, GIS programming, and WebGIS</li>
+    <li>Seining net, Gill net, long lines, cast net, dredge, trawl nets, and rod fishing</li>
+    <li> Trailering and hitching, driving large passenger vans and trucks, kayaking, driving small boats</li>
+  </ul>
+ <h7>Extracurriculars</h7>
+  <ul>
+    <li>Golf Club</li>
+    <li>Kayaking</li>
+    <li>Book Club</li>
+  </ul>                                                <h8>Contact Information</h8>                                 <p id="contact"> 
+     Email: medl-1269@tamu.edu
+     <br>
+     Phone: (940) 321-2838
+</div>
+<div class="right"></div>
+<div id="footer">
+  <h2 id="name">Lauren Medlin</h2></div>
+
+</html>
