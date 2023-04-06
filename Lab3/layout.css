@@ -37,8 +37,7 @@ div {
 .left {
   height: 1000px;
   width: 45px;
-  background-color:
-  #e0eeee;
+  background-color:;
   float: left;
   position: fixed;
 }
@@ -46,7 +45,7 @@ div {
 .right {
   height: 1000px;
   width: 45px;
-  background-color: #e0eeee;
+  background-color:;
   float: right;
   position: inherit;
 }
@@ -110,4 +109,7 @@ h8{
 }
 #summary{
   color: darkslategray;
+}
+h2{
+  color:mediumslateblue
 }

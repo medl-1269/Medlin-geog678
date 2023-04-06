@@ -37,8 +37,7 @@ div {
 .left {
   height: 1000px;
   width: 45px;
-  background-color:
-  #e0eeee;
+  background-color:;
   float: left;
   position: fixed;
 }
@@ -46,7 +45,7 @@ div {
 .right {
   height: 1000px;
   width: 45px;
-  background-color: #e0eeee;
+  background-color:;
   float: right;
   position: inherit;
 }
@@ -67,7 +66,7 @@ li {
 
 
 #name {
-  font-family: Sacramento;
+  font-family: Brush Script MT;
   float: right;
   margin-top: 10px;
   margin-right: 4%;
