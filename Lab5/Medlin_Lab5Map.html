@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Medlin's First Web Map</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+
+<style>
+	html, body {
+	height: 100%;
+	margin: 0;
+		}
+	#map { 
+	height: 400px; 
+	width: 600px;
+	}
+
+<style>body { padding: 0; margin: 0; } #map { height: 100%; width: 100vw; }</style>
+
+</style>
+
+
+</head>
+<body>
+	<div id="map"></div>
+	<script>
+		var map = L.map('map').setView([30.617620, -96.336560], 14);
+
+		L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+var circle = L.circle([30.6101, -96.3401], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 200
+}).addTo(map).bindPopup("Kyle Field").openPopup();
+
+var OMicon = L.icon({
+    iconUrl: 'building1.png',
+    iconSize: [27,30],
+    popupAnchor:  [-5, -20]
+});
+
+var AcaBuildicon = L.icon({
+    iconUrl: 'building2.png',
+    iconSize: [27,30],
+    popupAnchor:  [-5, -20]
+});
+
+L.marker([30.61848304105316, -96.33681566136931], {icon: OMicon}).addTo(map).bindPopup("O&M Building").openPopup();
+
+L.marker([30.616029174173388, -96.3411610487441], {icon: AcaBuildicon}).addTo(map).bindPopup("Academic Building").openPopup();
+
+function onMapClick(e) {
+    alert("You clicked the map at " + e.latlng);
+}
+
+map.on('click', onMapClick);
+
+	</script>
+</body>
+</html>
