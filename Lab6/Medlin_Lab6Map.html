@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Lab 6 Medlin TAMU Map</title>
+	
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+<style>
+	#map { 
+	height: 400px; 
+	width: 600px;
+	}
+	.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #313131;
+}
+</style>
+
+
+</head>
+<body>
+	<div id="map"></div>
+	
+	<script type="text/javascript" src="TAMUBuilding.js"></script>
+	<script>
+		var map = L.map('map').setView([30.617620, -96.336560], 14);
+
+		L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+L.geoJson(tamu).addTo(map);
+	
+	function style(feature) {
+    return {
+        fillColor: 'maroon',
+        weight: 2,
+        opacity: 1,
+        color: 'gray',
+        dashArray: '1',
+        fillOpacity: 0.7
+    };
+}
+
+L.geoJson(tamu, {style: style}).addTo(map);
+
+	function highlightFeature(e) {
+    var layer = e.target;
+	info.update(layer.feature);
+    layer.setStyle({
+        weight: 5,
+        color: '#FFFF00',
+        dashArray: '',
+        fillOpacity: 0.7
+    });
+
+    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+        layer.bringToFront();
+    }
+}
+	function resetHighlight(e) {
+    geojson.resetStyle(e.target);
+	info.update();
+}
+	function zoomToFeature(e) {
+    map.fitBounds(e.target.getBounds());
+}
+	function onEachFeature(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: zoomToFeature
+    });
+}
+
+geojson = L.geoJson(tamu, {
+    style: style,
+    onEachFeature: onEachFeature
+}).addTo(map);
+
+
+	var info = L.control();
+
+info.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info'); 
+    this.update();
+    return this._div;
+};
+
+
+info.update = function (feature) {
+    this._div.innerHTML = '<h4>Building</h4>' +  (feature ?
+        '<b>' + feature.properties.BldgName + '</b><br />' + feature.properties.BldgAbbr + ''
+        : 'Texas A&M University. Hover over buildings');
+};
+
+
+info.addTo(map);
+	
+
+
+</script>
+
+
+
+</body>
+</html>
