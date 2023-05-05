@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Lab 8 Medlin: Highcharts Chart College Station Forecast </title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+	<style>
+		#container {
+			mid-width: 310px;
+			max-width: 800px;
+			height: 400px;
+			margin: 0 auto
+	</style>
+
+  </head>
+
+  <body>
+	<div id="container"></div>
+	
+	<script>
+		Highcharts.chart('container', { 
+		title: { text: 'Lab 8: College Station Weekly Temp Forecast' },
+            subtitle: { text: 'Source: TAMU weather data' },
+            yAxis: { title: { text: 'Temperature (F)' } },
+            xAxis: {categories: ['Saturday', 'Sunday', 'Monday', 'Tuesday', 		'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    		},
+            legend: { layout: 'vertical', align: 'right', verticalAlign: 		'middle' },
+		
+		series: [{
+                name: 'Highest (°F)',
+                data: [82, 81, 81, 70, 77, 78, 79, 80]
+            }, {
+                name: 'Lowest (°F)',
+                data: [67, 59, 50, 47, 51, 60, 66, 66]
+            }],
+        
+		responsive: {
+                rules: [{
+                condition: {
+                maxWidth: 500
+                },
+                chartOptions: {
+                legend: {
+                layout: 'horizontal',
+                align: 'center',
+                verticalAlign: 'bottom'
+                }
+                }
+                }]
+                }
+                }); 
+
+</script>
+
+  </body>
+</html>
